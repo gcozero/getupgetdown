@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Exchange</title>
+</head>
+<body>
+  <h2>Enter your code to get a new code</h2>
+  <input type="text" id="inputCode" placeholder="Type code here">
+  <button onclick="exchangeCode()">Get New Code</button>
+  <p>New Code: <span id="outputCode">---</span></p>
+
+  <script>
+    // A simple dictionary of code pairs
+    const codeMap = {
+      "CODE123": "XYZ-999",
+      "HELLO": "WORLD-001",
+      "TEST": "PASS-404"
+    };
+
+    function exchangeCode() {
+      const userVal = document.getElementById("inputCode").value.trim();
+      const result = codeMap[userVal] ? codeMap[userVal] : "Invalid or unknown code";
+      document.getElementById("outputCode").innerText = result;
+    }
+  </script>
+</body>
+</html>
